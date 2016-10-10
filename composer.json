@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Toxic\\Games\\Santase\\Models\\": "app/src/models/"
+        }
+    },    
+    "require": {
+        "mongodb/mongodb": "^1.0.0"
+    }
+}
