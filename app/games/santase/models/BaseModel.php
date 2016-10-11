@@ -7,13 +7,9 @@ class BaseModel {
     protected static $instance = null;
     protected static $database = null;
 
-    protected function __construct() {
-        //Thou shalt not construct that which is unconstructable!
-    }
+    protected function __construct() {}
 
-    protected function __clone() {
-        //Me not like clones! Me smash clones!
-    }
+    protected function __clone() {}
 
     public static function getInstance($db_config) {
         if (!isset(static::$instance)) {
