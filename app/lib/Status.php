@@ -2,7 +2,14 @@
 
 namespace Toxic\Lib;
 
-class Status {
+/**
+ * Operation status
+ * 
+ * This class represents the operation result status. There are two properties - 
+ * code and message, which indicates the status and provides one of the pre-defined 
+ * success or error codes.
+ */
+class Status implements \JsonSerializable {
 
     /**
      * Status code
@@ -13,7 +20,7 @@ class Status {
      * 
      * @var int 
      */
-    public $code = 409;
+    protected $code = 409;
 
     /**
      * Status message
@@ -22,7 +29,7 @@ class Status {
      * 
      * @var string
      */
-    public $message = '';
+    protected $message = '';
 
     /**
      * Status class constructor
@@ -30,9 +37,21 @@ class Status {
      * @param int $code
      * @param string $message
      */
-    public function __construct(int $code, $message) {
+    public function __construct(int $code, string $message) {
         $this->code = $code;
         $this->message = $message;
+    }
+
+    /**
+     * Helper for serializing the object to JSON
+     * 
+     * @return array
+     */
+    public function jsonSerialize() {
+        return [
+            'code' => $this->code,
+            'message' => $this->message
+        ];
     }
 
 }
