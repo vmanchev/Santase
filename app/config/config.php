@@ -2,6 +2,8 @@
 
 return [
     'db' => [
-        "name" => "santase"
-    ]
+        "name" => "santase",
+        "host" => "mongodb://localhost"
+    ],
+    "ws_port" => 8181
 ];

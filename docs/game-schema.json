@@ -1,0 +1,49 @@
+{
+    "_id": "6883bdc7f354e641f376f557bb155236",
+    "players": [
+        {
+            "_id": "c97ba258f091c49d7b3cc98052467148",
+            "name": "Elvis"
+        },
+        {
+            "_id": "24c36f91a0b617c119bbfaa16f1d278d",
+            "name": "DragonBE"
+        }
+    ],
+    "started_at": "2016-10-08T16:45:02+03:00",
+    "finished_at": "2016-10-08T17:15:41+03:00",
+    "state" : "active",
+    "winner" : {
+        
+    },
+    "deals": [
+        {
+            "state": "open",
+            "trump": {
+                "label": "J",
+                "suit": "dimonds",
+                "value": 2
+            },
+            "cards": [
+            ],
+            "players": [
+                {
+                    "_id": "c97ba258f091c49d7b3cc98052467148",
+                    "cards": [
+                    ],
+                    "hands": [
+                    ],
+                    "score": 0
+                },
+                {
+                    "_id": "24c36f91a0b617c119bbfaa16f1d278d",
+                    "cards": [
+                    ],
+                    "hands": [
+                    ],
+                    "score": 0
+                }
+            ]
+        }
+    ]
+}

@@ -7,9 +7,13 @@ class BaseModel {
     protected static $instance = null;
     protected static $database = null;
 
-    protected function __construct() {}
+    protected function __construct() {
+        
+    }
 
-    protected function __clone() {}
+    protected function __clone() {
+        
+    }
 
     public static function getInstance($db_config) {
         if (!isset(static::$instance)) {
@@ -23,20 +27,23 @@ class BaseModel {
     }
 
     public static function getCollectionName() {
-       return strtolower(array_pop(explode("\\", get_called_class())));
+
+        $nsSegments = explode("\\", get_called_class());
+        
+        $className = array_pop($nsSegments);
+        
+        return strtolower($className);
     }
-    
-    public static function before()
-    {
+
+    public static function before() {
         return static::$instance->{static::$database}->{static::getCollectionName()};
     }
 
     public function save($data) {
-        
+
         static::before();
-        
-        return static::before()->insertOne($data);       
-        
+
+        return static::before()->insertOne($data);
     }
 
 }

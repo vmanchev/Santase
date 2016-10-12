@@ -1,6 +1,7 @@
 {
     "autoload": {
         "psr-4": {
+            "Toxic\\Lib\\" : "app/lib/",
             "Toxic\\Games\\Santase\\" : "app/games/santase/",
             "Toxic\\Games\\Santase\\Models\\": "app/games/santase/models/"            
         }

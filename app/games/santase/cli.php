@@ -9,12 +9,14 @@ use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
 use Toxic\Games\Santase\Engine as SantaseEngine;
 
+Toxic\Games\Santase\Models\BaseModel::getInstance($config['db']);
+
 $server = IoServer::factory(
                 new HttpServer(
                 new WsServer(
                 new SantaseEngine()
                 )
-                ), 8081
+                ), $config['ws_port']
 );
 
 $server->run();

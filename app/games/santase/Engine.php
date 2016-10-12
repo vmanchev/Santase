@@ -18,25 +18,20 @@ class Engine implements MessageComponentInterface {
 
     public function onMessage(ConnectionInterface $from, $msg) {
 
-        
-        
         $msg = json_decode($msg);
 
-        $this->connections[$from->resourceId]->send("Hi there!");
+        $modelSegments = explode('.', $msg->action);
         
-        return;
-        
-//        $modelSegments = explode('.', $msg->action);
-//        
-//        $modelName = "Toxic\Santase\Models\\" . ucfirst(strtolower($modelSegments[0]));
-//
-//        $callable = array(
-//            new $modelName(),
-//            strtolower($modelSegments[1])
-//        );
-//
-//        $result = call_user_func_array($callable, [$msg->data]);
+        $modelName = "Toxic\Games\Santase\Models\\" . ucfirst(strtolower($modelSegments[0]));
 
+        $callable = array(
+            $modelName,
+            strtolower($modelSegments[1])
+        );
+
+        $result = call_user_func_array($callable, [$msg->data]);
+
+        $this->connections[$from->resourceId]->send(json_encode($result));
     }
 
     public function onClose(ConnectionInterface $conn) {

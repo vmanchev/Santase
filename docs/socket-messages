@@ -1,0 +1,69 @@
+new user registration
+{
+    "action" : "players.register",
+    "data" : {
+        "username" : "",
+        "password" : ""
+    }
+}
+
+response: 
+{
+    "status" : {
+        "code" : 200,
+        "message" : "player.register.success"
+    },
+    "data" : {
+        "_id" : "57fa7e01c397a5cca1c01f6f"
+    }
+}
+
+{
+    "status" : {
+        "code" : 409,
+        "message" : "player.register.error.username.empty"
+    }
+}
+
+{
+    "status" : {
+        "code" : 409,
+        "message" : "player.register.error.username.duplicate"
+    }
+}
+
+user login
+{
+    "action" : "players.login",
+    "data" : {
+        "username" : "",
+        "password" : ""
+    }
+}
+
+new game invitation - when user A wants to invite user B
+{
+    "action" : "game.invitation.new",
+    "data" : {
+        "game_id" : "game_id",
+        "from" : "user_id_A",
+        "to" : "user_id_B"
+    }
+}
+
+declined invitation - when user B decline user A invitation
+{
+    "action" : "game.invitation.declined",
+    "data" : {
+        "game_id" : "game_id"
+    }
+}
+
+accepted invitation - when user B accepts user A invitation
+{
+    "action" : "game.invitation.accepted",
+    "data" : {
+        "game_id" : "game_id"
+    }
+}
+
